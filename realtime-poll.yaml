@@ -1,0 +1,18 @@
+version: '3.6'
+services:
+  realtime-poll-hge:
+    image: hasura/graphql-engine:v1.0.0-alpha29
+    depends_on:
+    - postgres
+    restart: always
+    environment:
+      HASURA_GRAPHQL_DATABASE_URL: postgres://postgres:@postgres:5432/realtime_poll
+      HASURA_GRAPHQL_ENABLE_CONSOLE: "true"
+  realtime-poll-ui:
+    restart: always
+    ports:
+    - "9999:8080"
+    image: realtime-poll-ui
+    depends_on:
+    - realtime-poll-hge
+    build: repos/graphql-engine/community/examples/realtime-poll

@@ -1,0 +1,9 @@
+:80 {
+
+    # realtime-poll
+    proxy / realtime-poll-ui:8080
+    proxy /v1 realtime-poll-hge:8080
+    proxy /console realtime-poll-hge:8080
+    proxy /v1alpha1 realtime-poll-hge:8080 { websocket }
+
+}

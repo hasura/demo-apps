@@ -1,0 +1,3 @@
+[submodule "repos/graphql-engine"]
+	path = repos/graphql-engine
+	url = git@github.com:hasura/graphql-engine.git
