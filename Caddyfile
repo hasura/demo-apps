@@ -1,9 +1,26 @@
-:80 {
+realtime-poll.local:80 {
 
-    # realtime-poll
-    proxy / realtime-poll-ui:8080
     proxy /v1 realtime-poll-hge:8080
     proxy /console realtime-poll-hge:8080
     proxy /v1alpha1 realtime-poll-hge:8080 { websocket }
+    proxy / realtime-poll-ui:8080
+
+}
+
+realtime-location-tracking.local:80 {
+
+    proxy /v1 realtime-location-tracking-hge:8080
+    proxy /console realtime-location-tracking-hge:8080
+    proxy /v1alpha1 realtime-location-tracking-hge:8080 { websocket }
+    proxy / realtime-location-tracking-ui:8080
+
+}
+
+react-apollo-todo.local:80 {
+
+    proxy /v1 react-apollo-todo-hge:8080
+    proxy /console react-apollo-todo-hge:8080
+    proxy /v1alpha1 react-apollo-todo-hge:8080 { websocket }
+    proxy / react-apollo-todo-ui:8080
 
 }

@@ -1,0 +1,19 @@
+version: '3.6'
+services:
+  react-apollo-todo-hge:
+    image: hasura/graphql-engine:v1.0.0-alpha29.cli-migrations
+    depends_on:
+    - postgres
+    restart: always
+    environment:
+      HASURA_GRAPHQL_DATABASE_URL: postgres://postgres:@postgres:5432/react_apollo_todo
+      HASURA_GRAPHQL_ENABLE_CONSOLE: "true"
+    env_file: react-apollo-todo.env  
+    volumes:
+    - ./repos/graphql-engine/community/examples/react-apollo-todo/hasura/migrations:/hasura-migrations
+  react-apollo-todo-ui:
+    restart: always
+    image: react-apollo-todo-ui
+    depends_on:
+    - react-apollo-todo-hge
+    build: repos/graphql-engine/community/examples/react-apollo-todo
