@@ -6,4 +6,5 @@ docker-compose \
   -f realtime-location-tracking.yaml \
   -f react-apollo-todo.yaml \
   -f serverless-push.yaml \
+  -f serverless-etl.yaml \
   "$@"

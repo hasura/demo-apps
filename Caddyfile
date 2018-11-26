@@ -33,3 +33,12 @@ serverless-push.local:80 {
     proxy / serverless-push-ui:80
 
 }
+
+serverless-etl.local:80 {
+
+    proxy /v1 serverless-etl-hge:8080
+    proxy /console serverless-etl-hge:8080
+    proxy /v1alpha1 serverless-etl-hge:8080 { websocket }
+    proxy / serverless-etl-ui:80
+
+}
