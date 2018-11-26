@@ -1,16 +1,7 @@
-(tlsconfig) {
-    tls ${TLS_EMAIL} {
-        ca {$TLS_CA}
-        dns cloudflare
-        wildcard
-    }
+{$ROOT_DOMAIN} {
+    root /html
+    templates
 }
-
-*.{$ROOT_DOMAIN} {
-    tls off
-    # import tlsconfig
-}
-
 
 realtime-poll.{$ROOT_DOMAIN} {
 
