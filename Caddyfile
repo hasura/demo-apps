@@ -1,4 +1,10 @@
-realtime-poll.local:80 {
+tls ${TLS} {
+    ca {$CA}
+    dns cloudflare
+    wildcard
+}
+
+realtime-poll.{$ROOT_DOMAIN} {
 
     proxy /v1 realtime-poll-hge:8080
     proxy /console realtime-poll-hge:8080
@@ -7,7 +13,7 @@ realtime-poll.local:80 {
 
 }
 
-realtime-chat.local:80 {
+realtime-chat.{$ROOT_DOMAIN} {
 
     proxy /v1 realtime-chat-hge:8080
     proxy /console realtime-chat-hge:8080
@@ -16,7 +22,7 @@ realtime-chat.local:80 {
 
 }
 
-realtime-location-tracking.local:80 {
+realtime-location-tracking.{$ROOT_DOMAIN} {
 
     proxy /v1 realtime-location-tracking-hge:8080
     proxy /console realtime-location-tracking-hge:8080
@@ -25,7 +31,7 @@ realtime-location-tracking.local:80 {
 
 }
 
-react-apollo-todo.local:80 {
+react-apollo-todo.{$ROOT_DOMAIN} {
 
     proxy /v1 react-apollo-todo-hge:8080
     proxy /console react-apollo-todo-hge:8080
@@ -34,7 +40,7 @@ react-apollo-todo.local:80 {
 
 }
 
-serverless-push.local:80 {
+serverless-push.{$ROOT_DOMAIN} {
 
     proxy /v1 serverless-push-hge:8080
     proxy /console serverless-push-hge:8080
@@ -43,7 +49,7 @@ serverless-push.local:80 {
 
 }
 
-serverless-etl.local:80 {
+serverless-etl.{$ROOT_DOMAIN} {
 
     proxy /v1 serverless-etl-hge:8080
     proxy /console serverless-etl-hge:8080
