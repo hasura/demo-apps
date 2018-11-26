@@ -24,3 +24,12 @@ react-apollo-todo.local:80 {
     proxy / react-apollo-todo-ui:8080
 
 }
+
+serverless-push.local:80 {
+
+    proxy /v1 serverless-push-hge:8080
+    proxy /console serverless-push-hge:8080
+    proxy /v1alpha1 serverless-push-hge:8080 { websocket }
+    proxy / serverless-push-ui:80
+
+}
