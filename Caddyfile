@@ -6,7 +6,7 @@
     }
 }
 
-*.demo.hasura.io {
+*.{$ROOT_DOMAIN} {
     tls off
     # import tlsconfig
 }
