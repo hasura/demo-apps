@@ -1,0 +1,18 @@
+version: '3.6'
+services:
+  realtime-chat-hge:
+    image: hasura/graphql-engine:v1.0.0-alpha29.cli-migrations
+    depends_on:
+    - postgres
+    restart: always
+    environment:
+      HASURA_GRAPHQL_DATABASE_URL: postgres://postgres:@postgres:5432/realtime_chat
+      HASURA_GRAPHQL_ENABLE_CONSOLE: "true"
+    volumes:
+    - ./repos/graphql-engine/community/examples/realtime-chat/hasura/migrations:/hasura-migrations
+  realtime-chat-ui:
+    restart: always
+    image: realtime-chat-ui
+    depends_on:
+    - realtime-chat-hge
+    build: repos/graphql-engine/community/examples/realtime-chat

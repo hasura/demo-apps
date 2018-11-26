@@ -7,6 +7,15 @@ realtime-poll.local:80 {
 
 }
 
+realtime-chat.local:80 {
+
+    proxy /v1 realtime-chat-hge:8080
+    proxy /console realtime-chat-hge:8080
+    proxy /v1alpha1 realtime-chat-hge:8080 { websocket }
+    proxy / realtime-chat-ui:8080
+
+}
+
 realtime-location-tracking.local:80 {
 
     proxy /v1 realtime-location-tracking-hge:8080
