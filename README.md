@@ -106,6 +106,17 @@ new-application.{$ROOT_DOMAIN} {
 }
 ```
 
+Add a link to the app in `index.html`:
+
+```html
+    <p><a href="//new-application.{{.Env.ROOT_DOMAIN}}">New Application</a></p>
+```
+
+If you need environment variables for the application, create a
+`new-application.env.sample` file and add it to `new-application.yaml`.
+Refer to [`react-apollo-todo.yaml`](react-apollo-todo.yaml) to see how it's done.
+
+
 Commit and push the changes.
 
 SSH to the server:
@@ -126,6 +137,15 @@ Update any submodules:
 ```bash
 git submodule sync
 git submodule update --init --recursive --remote
+```
+
+If there is an env file, make a copy of it and set actual values:
+
+```bash
+cp new-application.env.sample new-application.env
+vim new-application.env
+
+# ENV_NAME_1=ENV_VALUE_1
 ```
 
 Update the deployment:
