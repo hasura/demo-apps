@@ -1,8 +1,16 @@
-tls ${TLS} {
-    ca {$CA}
-    dns cloudflare
-    wildcard
+(tlsconfig) {
+    tls ${TLS_EMAIL} {
+        ca {$TLS_CA}
+        dns cloudflare
+        wildcard
+    }
 }
+
+*.demo.hasura.io {
+    tls off
+    # import tlsconfig
+}
+
 
 realtime-poll.{$ROOT_DOMAIN} {
 
