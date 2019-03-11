@@ -8,4 +8,5 @@ docker-compose \
   -f react-apollo-todo.yaml \
   -f serverless-push.yaml \
   -f serverless-etl.yaml \
+  -f do-blog-learn-graphql-by-doing.yaml \
   "$@"

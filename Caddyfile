@@ -56,3 +56,9 @@ serverless-etl.{$ROOT_DOMAIN} {
     proxy / serverless-etl-ui:80
 
 }
+
+lean-graphql.{$ROOT_DOMAIN} {
+
+    proxy / do-blog-learn-graphql-by-doing:8080 { websocket }
+
+}

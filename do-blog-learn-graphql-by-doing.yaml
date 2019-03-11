@@ -1,0 +1,13 @@
+# new-application.yaml
+version: '3.6'
+services:
+  do-blog-learn-graphql-by-doing:
+    image: hasura/graphql-engine:v1.0.0-alpha39.cli-migrations
+    depends_on:
+    - postgres
+    restart: always
+    environment:
+      HASURA_GRAPHQL_DATABASE_URL: postgres://postgres:@postgres:5432/do_blog_learn_graphql_by_doing
+      HASURA_GRAPHQL_ENABLE_CONSOLE: "true"
+    volumes:
+    - ./repos/do-blog-learn-graphql-by-doing/hasura/migrations:/hasura-migrations
