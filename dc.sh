@@ -9,4 +9,5 @@ docker-compose \
   -f serverless-push.yaml \
   -f serverless-etl.yaml \
   -f do-blog-learn-graphql-by-doing.yaml \
+  -f whatsapp-clone.yaml \
   "$@"
