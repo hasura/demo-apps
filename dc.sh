@@ -10,4 +10,5 @@ docker-compose \
   -f serverless-etl.yaml \
   -f do-blog-learn-graphql-by-doing.yaml \
   -f whatsapp-clone.yaml \
+  -f tic-tac-toe-react.yaml \
   "$@"
