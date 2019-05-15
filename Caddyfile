@@ -78,9 +78,9 @@ whatsapp-clone.{$ROOT_DOMAIN} {
 
 tic-tac-toe-react.{$ROOT_DOMAIN} {
 
-    proxy /v1 tic-tac-toe-hge:8080
-    proxy /console tic-tac-toe-hge:8080
-    proxy /v1alpha1 tic-tac-toe-hge:8080 { websocket }
-    proxy / tic-tac-toe-ui:8080
+    proxy /v1 tic-tac-toe-react-hge:8080
+    proxy /console tic-tac-toe-react-hge:8080
+    proxy /v1alpha1 tic-tac-toe-react-hge:8080 { websocket }
+    proxy / tic-tac-toe-ui:8000
 
 }
