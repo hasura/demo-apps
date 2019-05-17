@@ -5,7 +5,7 @@
 
 realtime-poll.{$ROOT_DOMAIN} {
 
-    proxy /v1 realtime-poll-hge:8080
+    proxy /v1 realtime-poll-hge:8080 { websocket }
     proxy /console realtime-poll-hge:8080
     proxy /v1alpha1 realtime-poll-hge:8080 { websocket }
     proxy / realtime-poll-ui:8080
@@ -14,7 +14,7 @@ realtime-poll.{$ROOT_DOMAIN} {
 
 realtime-chat.{$ROOT_DOMAIN} {
 
-    proxy /v1 realtime-chat-hge:8080
+    proxy /v1 realtime-chat-hge:8080 { websocket }
     proxy /console realtime-chat-hge:8080
     proxy /v1alpha1 realtime-chat-hge:8080 { websocket }
     proxy / realtime-chat-ui:8080
@@ -23,7 +23,7 @@ realtime-chat.{$ROOT_DOMAIN} {
 
 realtime-location-tracking.{$ROOT_DOMAIN} {
 
-    proxy /v1 realtime-location-tracking-hge:8080
+    proxy /v1 realtime-location-tracking-hge:8080 { websocket }
     proxy /console realtime-location-tracking-hge:8080
     proxy /v1alpha1 realtime-location-tracking-hge:8080 { websocket }
     proxy / realtime-location-tracking-ui:8080
@@ -32,7 +32,7 @@ realtime-location-tracking.{$ROOT_DOMAIN} {
 
 react-apollo-todo.{$ROOT_DOMAIN} {
 
-    proxy /v1 react-apollo-todo-hge:8080
+    proxy /v1 react-apollo-todo-hge:8080 { websocket }
     proxy /console react-apollo-todo-hge:8080
     proxy /v1alpha1 react-apollo-todo-hge:8080 { websocket }
     proxy / react-apollo-todo-ui:8080
@@ -41,7 +41,7 @@ react-apollo-todo.{$ROOT_DOMAIN} {
 
 serverless-push.{$ROOT_DOMAIN} {
 
-    proxy /v1 serverless-push-hge:8080
+    proxy /v1 serverless-push-hge:8080 { websocket }
     proxy /console serverless-push-hge:8080
     proxy /v1alpha1 serverless-push-hge:8080 { websocket }
     proxy / serverless-push-ui:80
@@ -50,7 +50,7 @@ serverless-push.{$ROOT_DOMAIN} {
 
 serverless-etl.{$ROOT_DOMAIN} {
 
-    proxy /v1 serverless-etl-hge:8080
+    proxy /v1 serverless-etl-hge:8080 { websocket }
     proxy /console serverless-etl-hge:8080
     proxy /v1alpha1 serverless-etl-hge:8080 { websocket }
     proxy / serverless-etl-ui:80
@@ -65,7 +65,7 @@ learn-graphql.{$ROOT_DOMAIN} {
 
 whatsapp-clone.{$ROOT_DOMAIN} {
 
-    proxy /v1 whatsapp-clone-hge:8080
+    proxy /v1 whatsapp-clone-hge:8080 { websocket }
     proxy /console whatsapp-clone-hge:8080
     proxy /v1alpha1 whatsapp-clone-hge:8080 { websocket }
     proxy /login whatsapp-clone-auth:8080
@@ -78,7 +78,7 @@ whatsapp-clone.{$ROOT_DOMAIN} {
 
 tic-tac-toe-react.{$ROOT_DOMAIN} {
 
-    proxy /v1 tic-tac-toe-react-hge:8080
+    proxy /v1 tic-tac-toe-react-hge:8080 { websocket }
     proxy /console tic-tac-toe-react-hge:8080
     proxy /v1alpha1 tic-tac-toe-react-hge:8080 { websocket }
     proxy / tic-tac-toe-ui:8000

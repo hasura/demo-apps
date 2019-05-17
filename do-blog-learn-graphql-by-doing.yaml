@@ -1,4 +1,3 @@
-# new-application.yaml
 version: '3.6'
 services:
   do-blog-learn-graphql-by-doing:
