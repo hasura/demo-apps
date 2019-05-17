@@ -2,7 +2,7 @@ version: '3.6'
 services:
   tic-tac-toe-react-remote-schema:
     restart: always
-    image: tic-tac-toe-remote-schema
+    image: tic-tac-toe-react-remote-schema
     depends_on:
     - postgres
     environment:
@@ -11,12 +11,12 @@ services:
   tic-tac-toe-react-hge:
     image: hasura/graphql-engine:v1.0.0-alpha44.cli-migrations
     depends_on:
-    - tic-tac-toe-remote-schema
+    - tic-tac-toe-react-remote-schema
     restart: always
     environment:
       HASURA_GRAPHQL_DATABASE_URL: postgres://postgres:@postgres:5432/tic-tac-toe-react
       HASURA_GRAPHQL_ENABLE_CONSOLE: "true"
-      TIC_TAC_REMOTE_SCHEMA_URL: http://tic-tac-toe-remote-schema:4000
+      TIC_TAC_REMOTE_SCHEMA_URL: http://tic-tac-toe-react-remote-schema:4000
     volumes:
     - ./repos/graphql-engine/community/sample-apps/tic-tac-toe-react/hasura/migrations:/hasura-migrations
   tic-tac-toe-ui:
