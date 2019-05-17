@@ -1,7 +1,7 @@
 version: '3.6'
 services:
   realtime-location-tracking-hge:
-    image: hasura/graphql-engine:v1.0.0-alpha29.cli-migrations
+    image: hasura/graphql-engine:v1.0.0-beta.01.cli-migrations
     depends_on:
     - postgres
     restart: always
