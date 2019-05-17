@@ -6,7 +6,7 @@ services:
     depends_on:
     - postgres
     environment:
-      POSTGRES_CONNECTION_STRING: postgres://postgres:@postgres:5432/tic-tac-toe-react
+      POSTGRES_CONNECTION_STRING: postgres://postgres:@postgres:5432/tic_tac_toe_react
     build: repos/graphql-engine/community/sample-apps/tic-tac-toe-react/remote-schema
   tic-tac-toe-react-hge:
     image: hasura/graphql-engine:v1.0.0-alpha44.cli-migrations

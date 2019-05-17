@@ -9,10 +9,10 @@ services:
       HASURA_GRAPHQL_DATABASE_URL: postgres://postgres:@postgres:5432/serverless_etl
       HASURA_GRAPHQL_ENABLE_CONSOLE: "true"
     volumes:
-    - ./repos/graphql-engine/community/examples/serverless-etl/hasura/migrations:/hasura-migrations
+    - ./repos/graphql-engine/community/sample-apps/serverless-etl/hasura/migrations:/hasura-migrations
   serverless-etl-ui:
     restart: always
     image: serverless-etl-ui
     depends_on:
     - serverless-etl-hge
-    build: repos/graphql-engine/community/examples/serverless-etl
+    build: repos/graphql-engine/community/sample-apps/serverless-etl
