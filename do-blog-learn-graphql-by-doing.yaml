@@ -4,6 +4,6 @@ services:
     image: hasura/graphql-engine:v2.0.0-alpha.2
     restart: always
     environment:
-      SAMPLE_APPS_DATABASE_URL: postgres://postgres:hasurasampleapps@postgres:5432/do_blog_learn_graphql_by_doing
-      HASURA_GRAPHQL_METADATA_DATABASE_URL: postgres://postgres:hasurasampleapps@postgres:5432/do_blog_learn_graphql_by_doing
+      SAMPLE_APPS_DATABASE_URL: postgres://postgres:@postgres:5432/do_blog_learn_graphql_by_doing
+      HASURA_GRAPHQL_METADATA_DATABASE_URL: postgres://postgres:@postgres:5432/do_blog_learn_graphql_by_doing
       HASURA_GRAPHQL_ENABLE_CONSOLE: "true"
