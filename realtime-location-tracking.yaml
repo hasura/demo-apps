@@ -1,18 +1,6 @@
 version: '3.6'
 services:
-  realtime-location-tracking-hge:
-    image: hasura/graphql-engine:v1.0.0-alpha29.cli-migrations
-    depends_on:
-    - postgres
-    restart: always
-    environment:
-      HASURA_GRAPHQL_DATABASE_URL: postgres://postgres:@postgres:5432/realtime_location_tracking
-      HASURA_GRAPHQL_ENABLE_CONSOLE: "true"
-    volumes:
-    - ./repos/graphql-engine/community/examples/realtime-location-tracking/hasura/migrations:/hasura-migrations
   realtime-location-tracking-ui:
     restart: always
     image: realtime-location-tracking-ui
-    depends_on:
-    - realtime-location-tracking-hge
-    build: repos/graphql-engine/community/examples/realtime-location-tracking
+    build: repos/graphql-engine/community/sample-apps/realtime-location-tracking
