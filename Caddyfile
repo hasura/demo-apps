@@ -59,6 +59,8 @@ serverless-etl.{$ROOT_DOMAIN} {
 
 learn-graphql.{$ROOT_DOMAIN} {
 
+    proxy /v1 do-blog-learn-graphql-by-doing:8080 { websocket }
+    proxy /console do-blog-learn-graphql-by-doing:8080 { websocket }
     proxy / do-blog-learn-graphql-by-doing:8080 { websocket }
 
 }

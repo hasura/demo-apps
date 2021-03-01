@@ -1,18 +1,6 @@
 version: '3.6'
 services:
-  serverless-push-hge:
-    image: hasura/graphql-engine:v1.0.0-beta.1.cli-migrations
-    depends_on:
-    - postgres
-    restart: always
-    environment:
-      HASURA_GRAPHQL_DATABASE_URL: postgres://postgres:@postgres:5432/serverless_push
-      HASURA_GRAPHQL_ENABLE_CONSOLE: "true"
-    volumes:
-    - ./repos/graphql-engine/community/sample-apps/serverless-push/hasura/migrations:/hasura-migrations
   serverless-push-ui:
     restart: always
     image: serverless-push-ui
-    depends_on:
-    - serverless-push-hge
     build: repos/graphql-engine/community/sample-apps/serverless-push

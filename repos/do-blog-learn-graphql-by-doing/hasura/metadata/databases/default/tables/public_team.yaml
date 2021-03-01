@@ -1,0 +1,11 @@
+array_relationships:
+- name: superheros
+  using:
+    foreign_key_constraint_on:
+      column: team_id
+      table:
+        name: superhero
+        schema: public
+table:
+  name: team
+  schema: public

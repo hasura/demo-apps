@@ -1,29 +1,14 @@
 version: '3.6'
 services:
-  whatsapp-clone-hge:
-    image: hasura/graphql-engine:v1.0.0-beta.1.cli-migrations
-    depends_on:
-    - postgres
-    restart: always
-    env_file: whatsapp-clone.env  
-    environment:
-      HASURA_GRAPHQL_DATABASE_URL: postgres://postgres:@postgres:5432/whatsapp_clone
-      HASURA_GRAPHQL_ENABLE_CONSOLE: "true"
-    volumes:
-    - ./repos/graphql-engine/community/sample-apps/whatsapp-clone-typescript-react/hasura/migrations:/hasura-migrations
   whatsapp-clone-ui:
     restart: always
     image: whatsapp-clone-ui
     env_file: whatsapp-clone.env  
-    depends_on:
-    - whatsapp-clone-hge
     build: repos/graphql-engine/community/sample-apps/whatsapp-clone-typescript-react/react-app
   whatsapp-clone-auth:
     restart: always
     image: whatsapp-clone-auth
     env_file: whatsapp-clone.env  
-    depends_on:
-    - whatsapp-clone-hge
     build: repos/graphql-engine/community/sample-apps/whatsapp-clone-typescript-react/auth-server
     environment:
       DATABASE_URL: postgres://postgres:@postgres:5432/whatsapp_clone
